@@ -4,7 +4,10 @@ namespace App\Controller;
 
 use App\Entity\Product;
 use App\Exception\JsonInvalidException;
-
+use Nelmio\ApiDocBundle\Annotation\Model;
+use Nelmio\ApiDocBundle\Annotation\Security;
+use OpenApi\Annotations as OA;
+use OpenApi\Annotations\Tag;
 use App\Form\ProductType;
 
 use App\Repository\ProductRepository;
@@ -21,6 +24,16 @@ class ProductController extends AbstractController
      * List Product
      * List of products.
      * @Route("", name="product_index",methods={"GET"})
+     * @OA\Response(
+     *     response=200,
+     *     description="Returns the rewards of an user"
+     * )
+     * @OA\Parameter(
+     *     name="order",
+     *     in="query",
+     *     description="The field used to order rewards",
+     *     @OA\Schema(type="string")
+     * )
      */
        public function index(Request $request, ProductRepository $productRepository)
     {

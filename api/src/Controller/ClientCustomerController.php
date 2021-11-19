@@ -95,6 +95,9 @@ class ClientCustomerController extends AbstractController
         );
     }
     /**
+     * Delete ClientCustomer
+     *
+     * Permit to delete a clientCustomer.
      * @Route("/{id}", name="clientCustomer_delete", methods={"DELETE"})
      * @param ClientCustomer $clientCustomer
      * @return Response
