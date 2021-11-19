@@ -8,3 +8,5 @@
 /api/var/
 /vendor/
 ###< symfony/framework-bundle ###
+
+api/.env
