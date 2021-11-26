@@ -20,16 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50f2456e-7718-4c10-b76c-433f76455730" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/api.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/package-versions-deprecated/src/PackageVersions/Versions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/package-versions-deprecated/src/PackageVersions/Versions.php" afterDir="false" />
@@ -129,6 +135,13 @@
       <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
       <path value="$PROJECT_DIR$/vendor/lcobucci/clock" />
       <path value="$PROJECT_DIR$/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/vendor/zircote/swagger-php" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/twig-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="20V8GixrxWGqNk0gU9F6d2favsU" />
@@ -140,12 +153,16 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Repository" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\BileMo\api\src\Repository" />
       <recent name="C:\laragon\www\BileMo\api\src\Controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\BileMo\api" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -158,6 +175,8 @@
       <updated>1636118301055</updated>
       <workItem from="1636118302084" duration="6655000" />
       <workItem from="1637324109991" duration="909000" />
+      <workItem from="1637328146853" duration="1064000" />
+      <workItem from="1637929498388" duration="3941000" />
     </task>
     <servers />
   </component>
@@ -177,21 +196,21 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="944" y="396" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1636728786649">
+    <state x="944" y="396" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1637930800387">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="944" y="396" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1400/2560.-216.1920.1040@0.0.2560.1400" timestamp="1636728786649" />
-    <state x="1007" y="396" key="FileChooserDialogImpl" timestamp="1636726965048">
+    <state x="944" y="396" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1400/2560.-216.1920.1040@0.0.2560.1400" timestamp="1637930800387" />
+    <state x="1007" y="396" key="FileChooserDialogImpl" timestamp="1637929523558">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1007" y="396" key="FileChooserDialogImpl/0.0.2560.1400/2560.-216.1920.1040@0.0.2560.1400" timestamp="1636726965048" />
-    <state x="1016" y="373" key="NewPhpClassDialog" timestamp="1636728681482">
+    <state x="1007" y="396" key="FileChooserDialogImpl/0.0.2560.1400/2560.-216.1920.1040@0.0.2560.1400" timestamp="1637929523558" />
+    <state x="1016" y="373" key="NewPhpClassDialog" timestamp="1637930224693">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1016" y="373" key="NewPhpClassDialog/0.0.2560.1400/2560.-216.1920.1040@0.0.2560.1400" timestamp="1636728681482" />
-    <state x="912" y="368" width="736" height="664" key="find.popup" timestamp="1636729153968">
+    <state x="1016" y="373" key="NewPhpClassDialog/0.0.2560.1400/2560.-216.1920.1040@0.0.2560.1400" timestamp="1637930224693" />
+    <state x="912" y="368" width="806" height="664" key="find.popup" timestamp="1637931377112">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="912" y="368" width="736" height="664" key="find.popup/0.0.2560.1400/2560.-216.1920.1040@0.0.2560.1400" timestamp="1636729153968" />
+    <state x="912" y="368" width="806" height="664" key="find.popup/0.0.2560.1400/2560.-216.1920.1040@0.0.2560.1400" timestamp="1637931377112" />
   </component>
 </project>
