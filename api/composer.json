@@ -13,6 +13,7 @@
         "doctrine/doctrine-bundle": "^2.4",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.10",
+        "jms/serializer-bundle": "^4.0",
         "nelmio/api-doc-bundle": "^4.6",
         "phpdocumentor/reflection-docblock": "^5.3",
         "sensio/framework-extra-bundle": "^6.2",
@@ -31,7 +32,8 @@
         "symfony/validator": "5.3.*",
         "symfony/yaml": "5.3.*",
         "twig/extra-bundle": "^2.12|^3.0",
-        "twig/twig": "^2.12|^3.0"
+        "twig/twig": "^2.12|^3.0",
+        "willdurand/hateoas-bundle": "^2.4"
     },
     "require-dev": {
         "symfony/maker-bundle": "^1.34"

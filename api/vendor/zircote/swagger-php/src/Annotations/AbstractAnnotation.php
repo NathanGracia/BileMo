@@ -10,6 +10,7 @@ use OpenApi\Analyser;
 use OpenApi\Context;
 use OpenApi\Generator;
 use OpenApi\Util;
+use OpenApi\Annotations\Info;
 use Symfony\Component\Yaml\Yaml;
 
 /**

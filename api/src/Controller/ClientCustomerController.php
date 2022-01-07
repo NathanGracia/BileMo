@@ -5,17 +5,22 @@ namespace App\Controller;
 
 use App\Entity\ClientCustomer;
 use App\Exception\JsonInvalidException;
-
-
+use Nelmio\ApiDocBundle\Annotation\Security;
+use OpenApi\Annotations\Tag;
 use App\Form\ClientCustomerType;
 use App\Repository\ClientCustomerRepository;
 use App\Repository\ProductRepository;
+use Nelmio\ApiDocBundle\Annotation\Model;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use OpenApi\Annotations as OA;
+
 /**
  * @Route("/clientCustomer")
+ * @Tag(name="ClientCustomer")
+ * @Security(name="Bearer")
  */
 class ClientCustomerController extends AbstractController
 {
@@ -51,7 +56,12 @@ class ClientCustomerController extends AbstractController
      * Create ClientCustomer
      *
      * Permit to create a clientCustomer.
-     *
+     * @OA\RequestBody(@Model(type=ClientCustomerType::class))
+     * @OA\Response(
+     *     response=201,
+     *     description="client customer created"
+     * )
+
      * @Route("", name="clientCustomer_new", methods={"POST"})
      */
     public function new(Request $request)
