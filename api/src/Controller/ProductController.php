@@ -6,14 +6,14 @@ use App\Entity\Product;
 
 use Nelmio\ApiDocBundle\Annotation\Security;
 use OpenApi\Annotations as OA;
+
+use Nelmio\ApiDocBundle\Annotation\Model;
 use OpenApi\Annotations\Tag;
 use App\Form\ProductType;
 use App\Repository\ProductRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Nelmio\ApiDocBundle\Annotation\Model;
-
 
 /**
  * @Route("/product")
@@ -24,6 +24,7 @@ class ProductController extends SerializerController
 {
     /**
      * List Product
+     * 
      * List of products.
      * @Route("", name="product_index",methods={"GET"})
      * 
@@ -47,7 +48,7 @@ class ProductController extends SerializerController
 
         return $this->json(
             [
-                'products' => $products,
+                'products' => iterator_to_array($products) ,
                 'nbElementsPerPage' => $nbElementsPerPage,
                 'page' => $page,
                 'nbElements' => count($productsPaginator)
@@ -102,7 +103,11 @@ class ProductController extends SerializerController
      * Return a specific product by id.
      * @Route("/{id}", name="product_show", methods={"GET"})
      * @param Product $product
-     * @return Response
+     * @return Response 
+     * @OA\Response(
+     *     response=200,
+     *      description="show specific product"
+     * )
      */
     public function show(Product $product): Response
     {

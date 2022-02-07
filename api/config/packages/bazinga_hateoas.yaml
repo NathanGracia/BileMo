@@ -2,3 +2,5 @@
 bazinga_hateoas:
     twig_extension:
         enabled: true
+    serializer:
+        json: hateoas.serializer.json_hal
