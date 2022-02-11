@@ -21,7 +21,7 @@ use OpenApi\Annotations as OA;
  * @Tag(name="ClientCustomer")
  * @Security(name="Bearer")
  */
-class ClientCustomerController extends AbstractController
+class ClientCustomerController extends SerializerController
 {
     /**
      * List ClientCustomer
@@ -48,7 +48,7 @@ class ClientCustomerController extends AbstractController
 
         return $this->json(
             [
-                'clientCustomers' => $clientCustomers,
+                'clientCustomers' => iterator_to_array($clientCustomers),
                 'nbElementsPerPage' => $nbElementsPerPage,
                 'page' => $page,
                 'nbElements' => count($clientCustomersPaginator)

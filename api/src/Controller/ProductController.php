@@ -33,7 +33,26 @@ class ProductController extends SerializerController
      * 
      * @OA\Response(
      *     response=200,
-     *     description="Returns the products"
+     *     description="Returns the products",
+     *      @OA\JsonContent(
+     *         @OA\Property(
+     *             property="elements",
+     *             type="array",
+     *             @OA\Items(ref=@Model(type=Product::class, groups={"product_list"}))
+     *         ),
+     *         @OA\Property(
+     *             property="page",
+     *             type="integer"
+     *         ),
+     *         @OA\Property(
+     *             property="nbElements",
+     *             type="integer"
+     *         ),
+     *         @OA\Property(
+     *             property="nbElementsPerPage",
+     *             type="integer"
+     *         )
+     *      )
      *    
      * )
      */
@@ -54,7 +73,11 @@ class ProductController extends SerializerController
                 'nbElements' => count($productsPaginator)
     
             ],
-            Response::HTTP_OK
+            Response::HTTP_OK,
+            [],
+            [
+                'groups' => ['product_list']
+            ]
 
         );
     }
