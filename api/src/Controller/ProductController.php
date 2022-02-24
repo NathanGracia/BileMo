@@ -137,6 +137,10 @@ class ProductController extends SerializerController
         return $this->json(
             $product,
             Response::HTTP_OK,
+            [],
+            [
+                'groups' => ['product_show']
+            ]
 
         );
     }
