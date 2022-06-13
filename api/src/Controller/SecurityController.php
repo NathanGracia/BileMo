@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class SecurityController extends AbstractController
 {
     /**
-     * @Route("/api/token", name="security_token", methods={"POST"})
+     * @Route("/token", name="security_token", methods={"POST"})
      */
     public function index(): Response
     {
