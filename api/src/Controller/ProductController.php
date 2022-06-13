@@ -3,24 +3,58 @@
 namespace App\Controller;
 
 use App\Entity\Product;
-use App\Exception\JsonInvalidException;
 
+use Nelmio\ApiDocBundle\Annotation\Security;
+use OpenApi\Annotations as OA;
+
+use Nelmio\ApiDocBundle\Annotation\Model;
+use OpenApi\Annotations\Tag;
 use App\Form\ProductType;
-
 use App\Repository\ProductRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+
 /**
  * @Route("/product")
+ * @Tag(name="Product")
+ * @Security(name="Bearer")
  */
-class ProductController extends AbstractController
+class ProductController extends SerializerController
 {
     /**
      * List Product
+     * 
      * List of products.
      * @Route("", name="product_index",methods={"GET"})
+     * 
+     * @OA\Parameter(name="page", in="query", @OA\Schema(type="integer"))
+     * @OA\Parameter(name="nbElementsPerPage", in="query", @OA\Schema(type="integer"))
+     * 
+     * @OA\Response(
+     *     response=200,
+     *     description="Returns the products",
+     *      @OA\JsonContent(
+     *         @OA\Property(
+     *             property="elements",
+     *             type="array",
+     *             @OA\Items(ref=@Model(type=Product::class, groups={"product_list"}))
+     *         ),
+     *         @OA\Property(
+     *             property="page",
+     *             type="integer"
+     *         ),
+     *         @OA\Property(
+     *             property="nbElements",
+     *             type="integer"
+     *         ),
+     *         @OA\Property(
+     *             property="nbElementsPerPage",
+     *             type="integer"
+     *         )
+     *      )
+     *    
+     * )
      */
        public function index(Request $request, ProductRepository $productRepository)
     {
@@ -33,13 +67,17 @@ class ProductController extends AbstractController
 
         return $this->json(
             [
-                'products' => $products,
+                'products' => iterator_to_array($products) ,
                 'nbElementsPerPage' => $nbElementsPerPage,
                 'page' => $page,
                 'nbElements' => count($productsPaginator)
-
+    
             ],
-            Response::HTTP_OK
+            Response::HTTP_OK,
+            [],
+            [
+                'groups' => ['product_list']
+            ]
 
         );
     }
@@ -48,8 +86,12 @@ class ProductController extends AbstractController
      * Create Product
      *
      * Permit to create a product.
-     *
-     * @Route("", name="product_new", methods={"POST"})4
+     * @OA\RequestBody(@Model(type=ProductType::class))
+     * @OA\Response(
+     *     response=201,
+     *     description="product created"
+     * )
+     * @Route("", name="product_new", methods={"POST"})
      */
     public function new(Request $request)
     {
@@ -79,15 +121,26 @@ class ProductController extends AbstractController
     }
 
     /**
+     * Return a product.
+     * 
+     * Return a specific product by id.
      * @Route("/{id}", name="product_show", methods={"GET"})
      * @param Product $product
-     * @return Response
+     * @return Response 
+     * @OA\Response(
+     *     response=200,
+     *      description="show specific product"
+     * )
      */
     public function show(Product $product): Response
     {
         return $this->json(
             $product,
             Response::HTTP_OK,
+            [],
+            [
+                'groups' => ['product_show']
+            ]
 
         );
     }

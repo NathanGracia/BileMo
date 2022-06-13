@@ -4,9 +4,34 @@ namespace App\Entity;
 
 use App\Repository\ClientCustomerRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Hateoas\Configuration\Annotation as Hateoas;
 
 /**
  * @ORM\Entity(repositoryClass=ClientCustomerRepository::class)
+ *   @Hateoas\Relation(
+ *      "self",
+ *      href = @Hateoas\Route(
+ *          "clientCustomer_show",
+ *          parameters = { "id" = "expr(object.getId())" }
+ *      ),
+ *      attributes = { "method" = "GET" },
+ * )
+ *  @Hateoas\Relation(
+ *      "delete",
+ *      href = @Hateoas\Route(
+ *          "clientCustomer_delete",
+ *          parameters = { "id" = "expr(object.getId())" }
+ *      ),
+ *      attributes = { "method" = "DELETE" },
+ * )
+ *  @Hateoas\Relation(
+ *      "list",
+ *      href = @Hateoas\Route(
+ *          "clientCustomer_index",
+ *          parameters = { "id" = "expr(object.getId())" }
+ *      ),
+ *      attributes = { "method" = "GET" },
+ * )
  */
 class ClientCustomer
 {
