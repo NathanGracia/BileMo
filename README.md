@@ -7,4 +7,4 @@ Install project :
 - lauch migrations and fixtures
 - run your server
 
-You can see documentation at /doc
+You can see documentation when the server is launched at this uri : /doc
