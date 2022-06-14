@@ -93,7 +93,7 @@ class ProductController extends SerializerController
      * )
      * @Route("", name="product_new", methods={"POST"})
      */
-    public function new(Request $request)
+  /*   public function new(Request $request)
     {
         $product = new Product();
         $form = $this->createForm(ProductType::class, $product);
@@ -118,7 +118,7 @@ class ProductController extends SerializerController
             Response::HTTP_CREATED
 
         );
-    }
+    } */
 
     /**
      * Return a product.

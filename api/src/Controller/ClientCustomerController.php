@@ -84,7 +84,7 @@ class ClientCustomerController extends SerializerController
         $form->submit($json);
 
         if (!($form->isSubmitted() && $form->isValid())) {
-            return $this->json(["message" => "form invalid"], Response::HTTP_BAD_REQUEST);
+            return $this->json(["message" => "form invalid : ".$form->getErrors()], Response::HTTP_BAD_REQUEST);
         }
 
         $entityManager = $this->getDoctrine()->getManager();

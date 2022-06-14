@@ -10,3 +10,5 @@
 ###< symfony/framework-bundle ###
 
 api/.env
+
+api/config/jwt/
